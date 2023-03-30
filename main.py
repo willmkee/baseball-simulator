@@ -90,8 +90,8 @@ def gameplay(home_team, away_team):
 home_team = []
 away_team = []
 
-load_players("Leaderboard.csv", home_team)
-load_players("Leaderboard.csv", away_team)
+load_players("Braves.csv", home_team)
+load_players("Braves.csv", away_team)
 
 gameplay(home_team, away_team)
 
