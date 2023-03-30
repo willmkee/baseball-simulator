@@ -23,11 +23,14 @@ def load_players(fileName, team):  # Method to load players into Hash Table
             player_id = int(row[9])
 
             # Creates new player object
-            p = Player(player_id, name, games, plate_appearances, homeruns, walks, strikeouts, batting_avg, obp, slugging)
+            p = Player(player_id, name, games, plate_appearances, homeruns, walks, strikeouts, batting_avg, obp,
+                       slugging)
             team.append(p)
+
 
 def probably(chance):
     return random.random() < chance
+
 
 def play_inning(team):
     outs = 0
@@ -67,24 +70,22 @@ def play_inning(team):
             outs += 1
     print("Inning over")
     return team_score
-def gameplay(home_team, away_team):
+
+
+def gameplay(home, away):
     home_score = 0
     away_score = 0
     inning = 1
 
     while inning < 19:
         if inning % 2 != 0:
-            away_score += play_inning(away_team)
+            away_score += play_inning(away)
             inning += 1
         elif inning % 2 == 0:
-            home_score += play_inning(home_team)
+            home_score += play_inning(home)
             inning += 1
     print("Ballgame!")
     print("Home: %s, Away: %s" % (home_score, away_score))
-
-    
-
-    
 
 
 home_team = []
@@ -94,4 +95,3 @@ load_players("Braves.csv", home_team)
 load_players("phillies.csv", away_team)
 
 gameplay(home_team, away_team)
-
