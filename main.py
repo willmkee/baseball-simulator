@@ -91,7 +91,7 @@ home_team = []
 away_team = []
 
 load_players("Braves.csv", home_team)
-load_players("Braves.csv", away_team)
+load_players("phillies.csv", away_team)
 
 gameplay(home_team, away_team)
 
